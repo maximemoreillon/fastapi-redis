@@ -13,7 +13,8 @@ async def getData():
   rate = r.get('rate')
 
   if not rate:
-    response = requests.get('https://api.coindesk.com/v1/bpi/currentprice.json')
+    url = 'https://api.coindesk.com/v1/bpi/currentprice.json'
+    response = requests.get(url)
     data = response.json()
     rate = data["bpi"]["USD"]["rate"]
     r.setex('rate', 10, rate)
