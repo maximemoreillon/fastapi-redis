@@ -1,5 +1,7 @@
 # FastAPI + Redis
 
+This is a simple example showing how to use Redis cache content served by FastAPI.
+
 ## Running this example
 
 ```
