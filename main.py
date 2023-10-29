@@ -1,8 +1,15 @@
 from fastapi import FastAPI
 import redis
 import requests
+from dotenv import load_dotenv
+import os
 
-r = redis.Redis(host='localhost', port=30379, decode_responses=True)
+load_dotenv()  
+
+REDIS_HOST = os.getenv('REDIS_HOST', 'localhost')
+REDIS_PORT = os.getenv('REDIS_PORT', 6379)
+
+r = redis.Redis(host=REDIS_HOST, port=REDIS_HOST, decode_responses=True)
 
 app = FastAPI()
 
